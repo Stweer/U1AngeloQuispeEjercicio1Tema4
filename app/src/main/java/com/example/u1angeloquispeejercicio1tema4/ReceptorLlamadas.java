@@ -56,8 +56,7 @@ public class ReceptorLlamadas extends BroadcastReceiver {
                         0, intencionmensajewhatsapp, 0);
 
 
-                //  Aqui se crea la Notificación
-
+                // Creamos Notificación
                 NotificationCompat.Builder notificacion = new
                         NotificationCompat.Builder(context)
                         .setContentTitle("Información de llamadas")
@@ -69,8 +68,6 @@ public class ReceptorLlamadas extends BroadcastReceiver {
                                 new Intent(context, Servicio.class), 0));
                 NotificationManager notificationManager = (NotificationManager)
                         context.getSystemService(Context.NOTIFICATION_SERVICE);
-
-                // Verificacion de Version
 
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
                     NotificationChannel notificationChannel =
@@ -85,6 +82,7 @@ public class ReceptorLlamadas extends BroadcastReceiver {
                 }
                 notificationManager.notify(ID_NOTIFICACION_CREAR, notificacion.build());
                 notificationManager.notify(1, notificacion.build());
+                //notificationManager.notify(0, notificacion.build());
             }
         }
     }
