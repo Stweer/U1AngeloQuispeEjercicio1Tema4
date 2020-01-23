@@ -52,15 +52,15 @@ public class Servicio extends AppCompatActivity {
         // Verificacion de la version SDK del celular
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
          //   Inicializacion de Servicios
-         //   startForegroundService(new Intent(Servicio.this, ReceptorLlamadas.class));
+            startForegroundService(new Intent(Servicio.this, ReceptorLlamadas.class));
 
-         //   startForegroundService(new Intent(Servicio.this, ReceptorSMS.class));
+           startForegroundService(new Intent(Servicio.this, ReceptorSMS.class));
             finish();
         } else {
             startService(new Intent(Servicio.this,
-         //           ReceptorLlamadas.class));
+                    ReceptorLlamadas.class));
             startService(new Intent(Servicio.this,
-         //           ReceptorSMS.class));
+                    ReceptorSMS.class));
             finish();
         }
     }
